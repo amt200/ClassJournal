@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 
 public class DailyCAAdapter extends ArrayAdapter {
@@ -58,7 +60,13 @@ public class DailyCAAdapter extends ArrayAdapter {
             dailyCAS.add(dailyCA);
         }
 
-        public int getLength(){
+    @Nullable
+    @Override
+    public Object getItem(int position) {
+        return dailyCAS.get(position);
+    }
+
+    public int getLength(){
             return dailyCAS.size();
         }
 
